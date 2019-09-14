@@ -22,12 +22,6 @@ class SupermarketResource():
             else:
                 items = char_formatter(item)
                 num_items = int(item[:len(items)])
-                total_checkout = ((num_items // self.STORE_DISCOUNT[items]['offer']) + self.STORE_ITEMS[items] * self.STORE_DISCOUNT[items]['rate']) + \
+                total_checkout = total_checkout + ((num_items // self.STORE_DISCOUNT[items]['offer']) + self.STORE_ITEMS[items] * self.STORE_DISCOUNT[items]['rate']) + \
                                 ((num_items % self.STORE_DISCOUNT[items]['offer']) * self.STORE_ITEMS[items])
         return total_checkout
-
-
-
-
-
-
