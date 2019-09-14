@@ -6,4 +6,4 @@ is working
 
 class TestHello():
     def test_hello(self):
-        assert hello_solution.hello('Mihail') == 'Hello, World!'
+        assert hello_solution.hello('Mihail') == 'Hello, Mihail!'
