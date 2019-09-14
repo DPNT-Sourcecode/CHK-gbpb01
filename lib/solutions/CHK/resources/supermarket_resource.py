@@ -15,6 +15,7 @@ class SupermarketResource():
         number of items bought
         """
         self.store_units = self.store_units.split()
+        print(self.store_units)
         total_checkout = 0
         for item in self.store_units:
             if type(item) is not str or char_formatter(item) not in self.STORE_ITEMS.keys():
@@ -38,5 +39,6 @@ class SupermarketResource():
     #     total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
     #                                 ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
     #     return total_price
+
 
 
