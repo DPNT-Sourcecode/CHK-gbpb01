@@ -7,15 +7,13 @@ class SupermarketResource():
     STORE_DISCOUNT = {'A' : {'offer': 3, 'rate': 150 / 130}, 'B': {'offer': 2, 'rate': 45 / 60} }
 
     def __init__(self, store_units):
-        self.store_units = store_units
+        self.store_units = store_units.split()
     
     def get_offer_price(self):
         """
         Special offer price that that is done by a supermarket based on the
         number of items bought
         """
-        self.store_units = self.store_units.split()
-        print(self.store_units)
         total_checkout = 0
         for item in self.store_units:
             if type(item) is not str or char_formatter(item) not in self.STORE_ITEMS.keys():
@@ -39,6 +37,7 @@ class SupermarketResource():
     #     total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
     #                                 ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
     #     return total_price
+
 
 
 
