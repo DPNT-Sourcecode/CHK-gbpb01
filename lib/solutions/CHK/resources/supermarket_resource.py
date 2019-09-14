@@ -30,13 +30,13 @@ class SupermarketResource():
         for item in items:
             if item in self.STORE_OFFERS:
                 offer = self.STORE_OFFERS[item]['price']
-                print('_offer', offer)
                 total_price = int(items.count(item) / offer )
                 if total_price > 0:
                     for i in range(total_price):
                         cost = self.STORE_ITEMS[item] * offer
                         offer_cost = self.STORE_OFFERS[item]['price'] 
                         price -= cost % offer_cost
+                        print('_price', price)
         return price
 
 
@@ -47,4 +47,5 @@ class SupermarketResource():
         for item in line:
             if item not in self.STORE_ITEMS:
                 return False
+
 
