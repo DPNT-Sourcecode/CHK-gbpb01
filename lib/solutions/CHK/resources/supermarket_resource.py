@@ -1,4 +1,4 @@
-from lib.solutions.CHK.util.check_items import char_formatter
+from solutions.CHK.util.formatter_char import char_formatter
 
 
 class SupermarketResource():
@@ -16,7 +16,7 @@ class SupermarketResource():
         """
         total_checkout = 0
         for item in self.store_units:
-            if type(item) if not str or char_formatter(item) not in STORE_ITEMS:
+            if type(item) is not str or char_formatter(item) not in STORE_ITEMS.keys():
                 return -1
             elif item[0].isdigit():
                 items = char_formatter(item)
@@ -35,4 +35,5 @@ class SupermarketResource():
         total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \ 
                                     ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items]))
         return total_price
+
 
