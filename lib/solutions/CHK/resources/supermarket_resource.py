@@ -52,12 +52,13 @@ class SupermarketResource():
 
     def _group_offers(self, items):
         price = 0
-        if 'E' in items:
+        if 'E' == items:
             items['E'] = items['E'] - int(items['B'] / 2)
             price = ((items['E'] % 2) * 30 + int((items['E']) / 2) * 45)
         print(price)
 
     
+
 
 
 
