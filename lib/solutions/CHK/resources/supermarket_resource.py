@@ -14,6 +14,8 @@ class SupermarketResource():
         Special offer price that that is done by a supermarket based on the
         number of items bought
         """
+        if self._input_validation(self.store_units):
+            return -1
         price = 0
 
         for item in list(self.store_units):
@@ -36,6 +38,14 @@ class SupermarketResource():
                         price -= cost % offer_cost
         return price
 
+
+    def _input_validation(self, line):
+        """
+        Checks if the input is valid
+        """
+        for item in list(line):
+            if item not in self.STORE_ITEMS:
+                return False
 
 
 
