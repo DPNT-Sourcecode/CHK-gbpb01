@@ -3,8 +3,8 @@ from solutions.CHK.util.formatter_char import char_formatter
 
 class SupermarketResource():
 
-    STORE_ITEMS = {'A': 50, 'B': 30, 'C': 20, 'D': 15}
-    STORE_OFFERS = {'A' : {'offer': 3, 'price': 130}, 'B': {'offer': 2, 'price': 45}}
+    STORE_ITEMS = {'A': 50, 'B': 30, 'C': 20, 'D': 15, 'E': 40}
+    STORE_OFFERS = {'A' : {'offer': 3, 'price': 130}, 'B': {'offer': 2, 'price': 45}, 'E': {'offer': 2, 'price': 30}}
 
     def __init__(self, store_units):
         self.store_units = list(store_units)
@@ -49,3 +49,4 @@ class SupermarketResource():
                 return False
 
     
+
