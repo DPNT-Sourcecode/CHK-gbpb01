@@ -14,7 +14,8 @@ class SupermarketResource():
         Special offer price that that is done by a supermarket based on the
         number of items bought
         """
-        print(self.store_units)
+        test = store_units.split()
+        print(test)
         total_checkout = 0
         for item in self.store_units:
             if type(item) is not str or char_formatter(item) not in self.STORE_ITEMS.keys():
