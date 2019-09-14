@@ -44,10 +44,6 @@ class SupermarketResource():
         Checks if the input is valid
         """
         for item in line:
+            print(item)
             if item not in self.STORE_ITEMS:
                 return False
-
-
-
-
-
