@@ -21,8 +21,8 @@ class SupermarketResource():
         for item in self.store_units:
             price = price + self.STORE_ITEMS[item]
         
-        price = self._get_offers(list(set(self.store_units)), price)
-        return price
+        # price = self._get_offers(list(set(self.store_units)), price)
+        # return price
 
     def _get_offers(self, items, price):
         """
@@ -46,6 +46,7 @@ class SupermarketResource():
         for item in line:
             if item not in self.STORE_ITEMS:
                 return False
+
 
 
 
