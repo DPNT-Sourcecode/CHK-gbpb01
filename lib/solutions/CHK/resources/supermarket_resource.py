@@ -32,8 +32,8 @@ class SupermarketResource():
             Args:
                 num_item (int) : number of items needed to buy to get the offer
         """
-        total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \ 
-                                    ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items]))
+        total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
+                                    ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
         return total_price
 
 
