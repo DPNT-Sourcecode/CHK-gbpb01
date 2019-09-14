@@ -30,6 +30,7 @@ class SupermarketResource():
         store_items = list(set(self.store_units))
         for item in store_items:
             if item in self.STORE_OFFERS:
+                self._get_offers(item)
                 offer = self.STORE_OFFERS[item]['offer']
                 total_price = int(items.count(item) / offer)
                 if total_price > 0:
@@ -48,5 +49,13 @@ class SupermarketResource():
             if item not in self.STORE_ITEMS:
                 return False
 
+    def _group_offers(self, items):
+        price = 0
+        if 'E' in items:
+            test = items['E'] - int(items['B'] / 2)
+            price = ((items['E'] % 2) * 30 + int((items['E']) / 2) * 45)
+        print(price)
+
     
+
 
