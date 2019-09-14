@@ -21,12 +21,12 @@ class SupermarketResource():
             elif item[0].isdigit():
                 items = char_formatter(item)
                 num_items = int(item[:len(items)])
-                total_checkout = self._total_price_offer(num_items)
+                total_checkout = self._total_price_offer(num_items, items)
             else:
                 total_checkout += STORE_ITEMS[item]
         return total_checkout
 
-    def _total_price_offer(self, num_item):
+    def _total_price_offer(self, num_item, items):
         """
         Total price of the offer based of the number of item
             Args:
@@ -35,5 +35,6 @@ class SupermarketResource():
         total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
                                     ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
         return total_price
+
 
 
