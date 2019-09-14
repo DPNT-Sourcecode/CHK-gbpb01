@@ -10,6 +10,10 @@ class SupermarketResource():
         self.store_units = store_units
     
     def get_offer_price(self):
+        """
+        Special offer price that that is done by a supermarket based on the
+        number of items bought
+        """
         total_checkout = 0
         for item in self.store_units:
             if type(item) if not str or char_formatter(item) not in STORE_ITEMS:
@@ -22,4 +26,6 @@ class SupermarketResource():
             else:
                 total_checkout += STORE_ITEMS[item]
         return total_checkout
+
+    def _total_checkout(self, )
 
