@@ -18,7 +18,7 @@ class SupermarketResource():
             return -1
         price = 0
 
-        for item in list(self.store_units):
+        for item in self.store_units:
             price = price + self.STORE_ITEMS[item]
         
         price = self._get_offers(list(set(self.store_units)), price)
@@ -43,7 +43,7 @@ class SupermarketResource():
         """
         Checks if the input is valid
         """
-        for item in list(line):
+        for item in line:
             if item not in self.STORE_ITEMS:
                 return False
 
