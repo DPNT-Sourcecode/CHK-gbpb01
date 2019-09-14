@@ -9,4 +9,3 @@ def compute(x, y):
         The sum of two numbers (int)
     """
     return x + y
-
