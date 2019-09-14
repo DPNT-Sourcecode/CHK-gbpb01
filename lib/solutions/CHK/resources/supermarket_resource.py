@@ -15,13 +15,20 @@ class SupermarketResource():
         number of items bought
         """
         total_checkout = 0
+            
+        for item in self.store_units:
+            total_checkout = total_checkout + 
+            
         for item in self.store_units:
             if type(item) is not str or char_formatter(item) not in self.STORE_ITEMS.keys():
                 total_checkout = -1
                 break
-            else:
+            elif item[0].isdigit():
                 items = char_formatter(item)
                 num_items = int(item[:len(items)])
-                total_checkout = total_checkout + ((num_items // self.STORE_DISCOUNT[items]['offer']) + self.STORE_ITEMS[items] * self.STORE_DISCOUNT[items]['rate']) + \
+                total_checkout = ((num_items // self.STORE_DISCOUNT[items]['offer']) + self.STORE_ITEMS[items] * self.STORE_DISCOUNT[items]['rate']) + \
                                 ((num_items % self.STORE_DISCOUNT[items]['offer']) * self.STORE_ITEMS[items])
+                print('total_item', total_checkout)
+            else:
+                total_checkout = total_checkout + self.STORE_ITEMS[item]
         return total_checkout
