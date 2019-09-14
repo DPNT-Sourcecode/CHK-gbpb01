@@ -29,7 +29,7 @@ class SupermarketResource():
         """
         for item in items:
             if item in self.STORE_OFFERS:
-                offer = self.STORE_OFFERS[item]['price']
+                offer = self.STORE_OFFERS[item]['offer']
                 total_price = int(items.count(item) / offer )
                 if total_price > 0:
                     for i in range(total_price):
@@ -47,5 +47,6 @@ class SupermarketResource():
         for item in line:
             if item not in self.STORE_ITEMS:
                 return False
+
 
 
