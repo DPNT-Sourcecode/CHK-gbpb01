@@ -14,7 +14,7 @@ class SupermarketResource():
         Special offer price that that is done by a supermarket based on the
         number of items bought
         """
-        if self._input_validation(self.store_units):
+        if self._input_validation(self.store_units) == False:
             return -1
         price = 0
 
@@ -43,9 +43,8 @@ class SupermarketResource():
         """
         Checks if the input is valid
         """
-        if not isinstance(line, str):
-            return False
         for item in line:
             print(item)
             if item not in self.STORE_ITEMS:
                 return False
+
