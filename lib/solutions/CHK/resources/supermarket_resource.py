@@ -16,6 +16,7 @@ class SupermarketResource():
         """
         total_checkout = 0
         for item in self.store_units:
+            print(item)
             if type(item) is not str or char_formatter(item) not in STORE_ITEMS.keys():
                 total_checkout = -1
                 break
