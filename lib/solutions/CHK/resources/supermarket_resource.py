@@ -30,6 +30,7 @@ class SupermarketResource():
         for item in items:
             if item in self.STORE_OFFERS:
                 offer = self.STORE_OFFERS[item]['price']
+                print('_offer', offer)
                 total_price = int(items.count(item) / offer )
                 if total_price > 0:
                     for i in range(total_price):
@@ -44,7 +45,6 @@ class SupermarketResource():
         Checks if the input is valid
         """
         for item in line:
-            print(item)
             if item not in self.STORE_ITEMS:
                 return False
 
