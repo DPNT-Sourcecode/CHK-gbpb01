@@ -4,7 +4,7 @@ from solutions.CHK.util.formatter_char import char_formatter
 class SupermarketResource():
 
     STORE_ITEMS = {'A': 50, 'B': 30, 'C': 20, 'D': 15}
-    STORE_DISCOUNT = {'A' : {'offer': 3, 'rate': 150 / 130}, 'B': {'offer': 2, 'rate': 45 / 60} }
+    STORE_DISCOUNT = {'A' : {'offer': 3, 'rate': 130}, 'B': {'offer': 2, 'rate': 45} }
 
     def __init__(self, store_units):
         self.store_units = list(store_units)
@@ -37,6 +37,7 @@ class SupermarketResource():
     #     total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
     #                                 ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
     #     return total_price
+
 
 
 
