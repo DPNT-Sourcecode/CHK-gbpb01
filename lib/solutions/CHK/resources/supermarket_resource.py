@@ -22,7 +22,7 @@ class SupermarketResource():
         price = self._get_offers(list(set(self.store_units)), price)
         return price
 
-    def _get_offers(items, price):
+    def _get_offers(self, items, price):
         """
         """
         for item in items:
@@ -35,6 +35,7 @@ class SupermarketResource():
                         offer_cost = self.STORE_OFFERS[item]['price'] 
                         price -= cost % offer_cost
         return price
+
 
 
 
