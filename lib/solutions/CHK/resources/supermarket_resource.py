@@ -17,14 +17,15 @@ class SupermarketResource():
             elif item[0].isdigit():
                 items = self._string_formatter(item)
                 num_items = int(item[:len(items)])
-                total_checkout = total_sum + ((num_item // ))
-        
-
-
+                total_checkout = total_sum + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
+                                    ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
+            else:
+                total_checkout += STORE_ITEMS[item]
+        return total_checkout
+    
 
     def _string_formatter(self, store_units):
         return ''.join([unit for unit in store_units if not unit.isdigit()])
-
 
 
 
