@@ -24,9 +24,11 @@ class SupermarketResource():
                 num_items = int(item[:len(items)])
                 total_checkout = ((num_items // self.STORE_DISCOUNT[items]['offer']) + self.STORE_ITEMS[items] * self.STORE_DISCOUNT[items]['rate']) + \
                                 ((num_items % self.STORE_DISCOUNT[items]['offer']) * self.STORE_ITEMS[items])
+                print('total_item', total_checkout)
             else:
                 total_checkout = total_checkout + self.STORE_ITEMS[item]
         return total_checkout
+
 
 
 
