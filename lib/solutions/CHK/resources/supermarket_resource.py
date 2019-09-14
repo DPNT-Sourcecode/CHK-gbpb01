@@ -14,7 +14,7 @@ class SupermarketResource():
         Special offer price that that is done by a supermarket based on the
         number of items bought
         """
-        test = store_units.split()
+        test = self.store_units.split()
         print(test)
         total_checkout = 0
         for item in self.store_units:
@@ -39,3 +39,4 @@ class SupermarketResource():
     #     total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
     #                                 ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
     #     return total_price
+
