@@ -43,6 +43,8 @@ class SupermarketResource():
         """
         Checks if the input is valid
         """
+        if not isinstance(line, str):
+            return False
         for item in line:
             print(item)
             if item not in self.STORE_ITEMS:
