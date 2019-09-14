@@ -17,7 +17,8 @@ class SupermarketResource():
         total_checkout = 0
         for item in self.store_units:
             if type(item) is not str or char_formatter(item) not in STORE_ITEMS.keys():
-                return -1
+                total_checkout = -1
+                break
             elif item[0].isdigit():
                 items = char_formatter(item)
                 num_items = int(item[:len(items)])
@@ -36,7 +37,3 @@ class SupermarketResource():
         total_price = total_price + ((num_item // STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items] * STORE_DISCOUNT[items]['rate']) + \
                                     ((num % STORE_DISCOUNT[items]['offer']) * STORE_ITEMS[items])
         return total_price
-
-
-
-

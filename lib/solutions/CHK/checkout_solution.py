@@ -10,5 +10,3 @@ def checkout(skus):
     """
     supermarket = SupermarketResource(skus)
     return supermarket.get_offer_price()
-
-
