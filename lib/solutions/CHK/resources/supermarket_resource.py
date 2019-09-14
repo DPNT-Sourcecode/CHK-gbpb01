@@ -30,6 +30,7 @@ class SupermarketResource():
         store_items = list(set(self.store_units))
         for item in store_items:
             if item in self.STORE_OFFERS:
+                print(item)
                 self._get_offers(item)
                 offer = self.STORE_OFFERS[item]['offer']
                 total_price = int(items.count(item) / offer)
@@ -57,6 +58,7 @@ class SupermarketResource():
         print(price)
 
     
+
 
 
 
