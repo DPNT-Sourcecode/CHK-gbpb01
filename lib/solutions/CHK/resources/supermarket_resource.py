@@ -4,7 +4,7 @@ from solutions.CHK.util.formatter_char import char_formatter
 class SupermarketResource():
 
     STORE_ITEMS = {'A': 50, 'B': 30, 'C': 20, 'D': 15}
-    STORE_DISCOUNT = {'A' : {'offer': 3, 'price': 130}, 'B': {'offer': 2, 'price': 45} }
+    STORE_OFFERS = {'A' : {'offer': 3, 'price': 130}, 'B': {'offer': 2, 'price': 45} }
 
     def __init__(self, store_units):
         self.store_units = list(store_units)
@@ -20,26 +20,21 @@ class SupermarketResource():
             price = price + self.STORE_ITEMS[item]
         
         price = self._get_offers(list(set(self.store_units)), price)
-    
-
-        for item in self.store_units:
-            if type(item) is not str or char_formatter(item) not in self.STORE_ITEMS.keys():
-                total_checkout = -1
-                break
-            elif item[0].isdigit():
-                items = char_formatter(item)
-                num_items = int(item[:len(items)])
-                total_checkout = ((num_items // self.STORE_DISCOUNT[items]['offer']) + self.STORE_ITEMS[items] * self.STORE_DISCOUNT[items]['rate']) + \
-                                ((num_items % self.STORE_DISCOUNT[items]['offer']) * self.STORE_ITEMS[items])
-                print('total_item', total_checkout)
-            else:
-                total_checkout = total_checkout + self.STORE_ITEMS[item]
-        return total_checkout
+        return price
 
     def _get_offers(items, price):
         """
         """
         for item in items:
-            if item in self.STORE_DISCOUNT:
+            if item in self.STORE_OFFERS:
+                offer = self.STORE_OFFERS[item]['price']
+                total_price = int(items.count(item) / offer )
+                if total_price > 0:
+                    for i in range(total_price):
+                        cost = self.STORE_ITEMS[item] * offer
+                        offer_cost = self.STORE_OFFERS[item]['price'] 
+                        price -= cost % offer_cost
+        return price
+
 
 
